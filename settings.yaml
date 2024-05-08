@@ -1,0 +1,31 @@
+cluster_name: moto-mocking-aws
+network:
+  starting_ip: 192.168.33.10
+  dns_servers:
+  - 8.8.8.8
+  - 1.1.1.1
+nodes:
+  count: 1
+  specifications:
+  - name: "mocking-aws"
+    cpu: 6
+    memory: 24000
+    scripts:
+    - "scripts/ssh_config.sh"
+    - "scripts/python_install.sh"
+    - "scripts/install_docker.sh"
+    - "scripts/install_aws_cli.sh"
+    - "scripts/install_terraform.sh"
+    - "scripts/install_minio.sh"
+#- "scripts/script2.sh"
+#    - name: "vm2"
+#      cpu: 4
+#      memory: 8192
+#      scripts:
+#        - "scripts/script3.sh"
+shared_folders:
+- host_path: "./shared"
+  vm_path: "/shared"
+software:
+  box: "bento/ubuntu-22.04"
+
