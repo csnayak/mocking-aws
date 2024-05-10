@@ -1,0 +1,10 @@
+instance_tags:
+  instance1:
+    Name: "Instance1"
+    Environment: "Development"
+    Owner: "TeamA"
+  instance2:
+    Name: "Instance2"
+    Environment: "Production"
+    Owner: "TeamB"
+
